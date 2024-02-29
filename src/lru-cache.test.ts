@@ -13,11 +13,25 @@ describe('LRU Cache', () => {
     cache.set('foo', 'bar');
     assert.equal(cache.get('foo'), 'bar');
   });
-  test.todo('evicts the least recently used key when at capacity');
+  test('evicts the least recently used key when at capacity', () => {
+    // Arrange
+    const cache: Cache = LRUCache.ofSize(2);
+    cache.set('A', '1');
+    cache.set('B', '2');
+    cache.set('C', '3');
+
+    // Act
+    const leastRecentlyValue = cache.get('1');
+
+    // Assert
+    assert.equal(leastRecentlyValue, null);
+    assert.equal(cache.get('C'), '3');
+  });
 });
 
 class LRUCache implements Cache {
   private readonly cache: Map<string, string> = new Map();
+  private readonly keys: string[] = [];
 
   private constructor(private size: number) {}
 
@@ -25,10 +39,15 @@ class LRUCache implements Cache {
     return this.cache.get(key) ?? null;
   }
   set(key: string, value: string): void {
+    if (this.cache.size === this.size) {
+      const key = this.keys.shift();
+      this.cache.delete(key as string);
+    }
     this.cache.set(key, value);
+    this.keys.push(key);
   }
   del(key: string): void {
-    throw new Error('Method not implemented.');
+    this.cache.delete(key);
   }
   public static ofSize(size: number): Cache {
     return new LRUCache(size);
