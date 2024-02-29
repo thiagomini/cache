@@ -1,10 +1,11 @@
 # Cache Exercise
+
 This exercise is designed to help you understand how to create a cache from scratch. We'll cover the following types of cache invalidation strategies:
 
-* LRU (Least Recently Used) invalidation
-* MRU (Most Recently Used) invalidation
-* LFU (Least Frequently Used) invalidation
-* TTL (Time To Live) invalidation
+- LRU (Least Recently Used) invalidation
+- MRU (Most Recently Used) invalidation
+- LFU (Least Frequently Used) invalidation
+- TTL (Time To Live) invalidation
 
 ## Instructions
 

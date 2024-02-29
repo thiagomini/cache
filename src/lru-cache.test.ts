@@ -1,5 +1,5 @@
-import { describe, test } from "node:test";
-import { Cache } from "./cache.interface";
+import { describe, test } from 'node:test';
+import { Cache } from './cache.interface';
 import assert from 'node:assert/strict';
 
 describe('LRU Cache', () => {
@@ -13,18 +13,18 @@ describe('LRU Cache', () => {
 });
 
 class LRUCache implements Cache {
-  private constructor(private size: number) { }
+  private constructor(private size: number) {}
 
   get(key: string): string | null {
     return null;
   }
   set(key: string, value: string): void {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
   del(key: string): void {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
-  public static ofSize(size: number): Cache { 
+  public static ofSize(size: number): Cache {
     return new LRUCache(size);
   }
 }
