@@ -1,4 +1,4 @@
-import { describe, test } from "node:test";
+import { describe, test } from 'node:test';
 
 describe('LRU Cache', () => {
   test.todo('returns null for unknown keys');
