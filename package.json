@@ -4,11 +4,18 @@
   "description": "An example package I created to help MBA colleagues to exercise every type of caching strategy",
   "main": "index.js",
   "scripts": {
-    "test": "node --test"
+    "test": "node --import tsx --test */**.test.ts"
+  },
+  "engines": {
+    "node": ">=20.11.0"
   },
   "keywords": [
     "cache"
   ],
   "author": "Thiago R. V. Martins",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
 }
