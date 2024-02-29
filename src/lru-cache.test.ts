@@ -8,18 +8,24 @@ describe('LRU Cache', () => {
 
     assert.equal(cache.get('foo'), null);
   });
-  test.todo('returns the value for known keys');
+  test('returns the value for known keys', () => {
+    const cache: Cache = LRUCache.ofSize(3);
+    cache.set('foo', 'bar');
+    assert.equal(cache.get('foo'), 'bar');
+  });
   test.todo('evicts the least recently used key when at capacity');
 });
 
 class LRUCache implements Cache {
+  private readonly cache: Map<string, string> = new Map();
+
   private constructor(private size: number) {}
 
   get(key: string): string | null {
-    return null;
+    return this.cache.get(key) ?? null;
   }
   set(key: string, value: string): void {
-    throw new Error('Method not implemented.');
+    this.cache.set(key, value);
   }
   del(key: string): void {
     throw new Error('Method not implemented.');
