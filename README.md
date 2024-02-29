@@ -1,13 +1,10 @@
 # Cache Exercise
 This exercise is designed to help you understand how to create a cache from scratch. We'll cover the following types of cache invalidation strategies:
 
-* Time-based invalidation
 * LRU (Least Recently Used) invalidation
 * MRU (Most Recently Used) invalidation
 * LFU (Least Frequently Used) invalidation
 * TTL (Time To Live) invalidation
-* Write-Through invalidation
-* Write-Back invalidation
 
 ## Instructions
 
@@ -17,4 +14,4 @@ Hint: Implement the cache class using the `Cache` interface.
 
 ## Running the tests
 
-Simply execute `npm run test` to run all tests. 
+Simply execute `npm run test` to run all tests. Notice that we're using Node's native test runner, so you don't need to install any additional dependencies. Moreover, I recommend you to use node's `assert` module to perform verifications in your tests (as we don't have the `expect` api from jest).
