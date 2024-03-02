@@ -36,7 +36,7 @@ class LRUCache implements Cache {
   private constructor(private size: number) {}
 
   get(key: string): string | null {
-    return this.cache.get(key) ?? null;
+    return this.cache.get(key) ?? null; 
   }
   set(key: string, value: string): void {
     if (this.cache.size === this.size) {
