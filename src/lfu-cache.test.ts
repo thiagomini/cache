@@ -37,6 +37,8 @@ describe('LFU Cache', () => {
     assert.equal(lfuCache.get('C'), null);
     assert.equal(lfuCache.get('D'), '4');
   });
+
+  test.todo('evicts the least recently used key when there is a tie');
 });
 
 class LFUCache implements Cache {
